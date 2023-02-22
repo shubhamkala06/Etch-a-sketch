@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    
+}
+
+.container{
+    margin: 5% 0px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.heading{
+    font-size: 4rem;
+    margin: 0px;
+    padding: 0px;
+    font-family: Kaushan Script,sans-serif;
+}
+
+.controls{
+    margin-top: 5rem;
+    width: 200px;
+    height: 400px;
+}
+
+.sketchArea{
+    padding-top: 50px;
+    display: grid;
+    width: 650px;
+    height: 650px;
+    border: 0.5px solid black;
+}
+
+.box{
+    background-color: white;
+}
+
+.black{
+    background-color: black;
+}
