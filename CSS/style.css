@@ -1,9 +1,6 @@
 *{
     box-sizing: border-box;
 }
-body{
-    
-}
 
 .container{
     margin: 5% 0px;
@@ -25,7 +22,6 @@ body{
 }
 
 .sketchArea{
-    padding-top: 50px;
     display: grid;
     width: 650px;
     height: 650px;
