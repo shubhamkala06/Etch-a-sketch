@@ -79,7 +79,7 @@ const clear = document.querySelector('.clearCanvas');
 const slider = document.querySelector('.canvasSize');
 const canvasSize = document.querySelector('.canvasSizeValue');
 const gridlines = document.querySelector('.gridChoice');
-n = 50;
+n = 20;
 slider.value = n;
 canvasSize.textContent = `${n} x ${n}`;
 
