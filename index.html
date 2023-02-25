@@ -5,16 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-a-Sketch</title>
+    <!--Google font-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script ">
-
+    <!--colorjoe css file-->
+    <link rel="stylesheet" href="CSS/colorjoe.css">
+    <!--colorjoe javascript file-->
+    <script src="JavaScript/colorjoe.js"></script>
+    <!--main javascript file-->
     <script src="JavaScript/JS.js" defer></script>
+    <!--main css file-->
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-    <div class="container flexbox">
+    <div class="containerBox">
         <div>
             <h1 class="heading">Etch-a-Sketch</h1>
             <div class="controls">
+                <div class="colorText">Fill color</div>
+                <div class="colorBox">
+                    <div class="container">
+                        <div class="colorjoe"></div>
+                        <div class="config">
+                            <div class="config-title">Selected Color</div>
+                            <div class="selected-color-text"></div>
+                            <div class="selected-color"></div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="line">
+                <div class="tools">
+                    <div class="brushTool">
+                        <div class="brushText">Brush</div>
+                        <div class="brush"></div>
+                    </div>
+                    <div class="eraserTool">
+                        <div class="eraserText">Eraser</div>
+                        <div class="eraser"></div>
+                    </div>
+                </div>
+                <hr class="line">
+                <div class="canvasText">Canvas Size</div>
+                <input type="range" class="canvasSize" min="1" max="100" step="1">
+                <div class="canvasSizeValue"></div>
+                <hr class="line">
+
+                <div class="accessories">
+                    <div class="clearCanvas">
+                        <div class="clear">Clear All</div>
+                    </div>
+                    <div class="verticalLine"></div>
+                    <div class="gridLines">
+                        <div class="gridText">Gridlines</div>
+                        <input type="checkbox" class="gridChoice" name="grid">
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="sketchArea grid">
@@ -22,4 +67,7 @@
         </div>
     </div>
 </body>
+<script>
+
+</script>
 </html>
