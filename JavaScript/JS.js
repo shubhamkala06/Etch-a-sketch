@@ -104,7 +104,7 @@ clear.addEventListener('mouseenter',(e)=>{
 });
 clear.addEventListener('mouseleave',(e)=>{
     e.target.childNodes[1].style.display = 'none';
-    e.target.style.backgroundImage = 'url(../Resources/clear.png)';
+    e.target.style.backgroundImage = 'url("../Resources/clear.png")';
 });
 
 
