@@ -2,10 +2,15 @@
     box-sizing: border-box;
 }
 
-.container{
-    margin: 5% 0px;
+body{
+    background-color:rgb(243, 243, 214);
+}
+
+.containerBox{
+    margin: 10% 0px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 180px;
 }
 
 .heading{
@@ -15,23 +20,191 @@
     font-family: Kaushan Script,sans-serif;
 }
 
+
 .controls{
-    margin-top: 5rem;
-    width: 200px;
-    height: 400px;
+    padding: 5% 10%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 300px;
+    height: 520px;
+}
+
+.tools{
+    display: flex;
+    justify-content: space-between;
+}
+
+.eraser{
+    background-image: url(../Resources/eraser.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    margin: 0px auto;
+    border: 0.01px solid beige;
+}
+
+.brush{
+    background-image: url(../Resources/brush.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    margin: 0px auto;
+    border: 0.01px solid beige;
+}
+
+.canvasSizeValue{
+    margin: 5px auto;
+    text-align: center;
+    width: 85px;
+    height: 22px;
+}
+
+.canvasSize{
+    display: block;
+    margin: 0px auto;
+}
+
+.accessories{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.clearCanvas{
+    background-image: url(../Resources/clear.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    border: 1px solid bisque;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.clear{
+    display: none;
+}
+
+.verticalLine{
+    margin: 10px 0px;
+    height: 30px;
+    width: 0.1px;
+    border: 0.1px solid black;
+}
+
+.gridLines{
+    display: flex;
+}
+
+.gridText{
+    margin-right: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.colorText, .eraserText, .canvasText, .brushText, .clearCanvasText{
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.eraser:hover, .brush:hover, .clearCanvas{
+    cursor: pointer;
+}
+
+.line{
+    margin: 20px 0px;
 }
 
 .sketchArea{
     display: grid;
     width: 650px;
     height: 650px;
-    border: 0.5px solid black;
+    border: 3px solid white;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgb(0, 0, 0.5);
+    
 }
 
 .box{
     background-color: white;
 }
 
-.black{
-    background-color: black;
+.border{
+    border: 0.009px solid rgba(0, 0, 0, 0.200);
+}
+
+/*----------------------------------------------ColorJoe related CSS-----------------------------------------*/
+
+.colorPicker {
+    background: none;
+    border: none;
+    margin: 0;
+}
+
+.colorPicker .oned, .colorPicker .oned .bg {
+	height: 200px;
+    margin: 0px;
+}
+
+.colorPicker .twod, .colorPicker .twod .bg {
+	width: 200px;
+	height: 200px;
+}
+
+.colorPicker .twod {
+	margin: 0em 0.5em;
+}
+
+.colorBox{
+    border: 3px solid white;
+    width: 150px;
+    height: 25px;
+    margin:0px auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    
+}
+
+.container {
+    display: none;
+    width: 445px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.config {
+    flex-grow: 1;
+    margin-left: 0px;
+}
+
+.config-title {
+    text-align: center;
+    padding: 15px 0;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.selected-color-text {
+    text-align: center;
+    font-family: monospace;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.selected-color {
+    width: 6rem;
+    height: 1rem;
+    margin: 0px auto;
 }
