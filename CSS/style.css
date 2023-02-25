@@ -39,7 +39,7 @@ body{
 }
 
 .eraser{
-    background-image: url(../Resources/eraser.png);
+    background-image: url('../Resources/eraser.png');
     background-size: contain;
     background-repeat: no-repeat;
     width: 100px;
@@ -50,7 +50,7 @@ body{
 }
 
 .brush{
-    background-image: url(../Resources/brush.png);
+    background-image: url('../Resources/brush.png');
     background-size: contain;
     background-repeat: no-repeat;
     width: 100px;
@@ -79,7 +79,7 @@ body{
 }
 
 .clearCanvas{
-    background-image: url(../Resources/clear.png);
+    background-image: url('../Resources/clear.png');
     background-size: contain;
     background-repeat: no-repeat;
     width: 50px;
