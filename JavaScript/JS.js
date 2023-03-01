@@ -7,6 +7,7 @@ function createCanvas(x){
     for(let i=0;i<(x*x);i++){
         const div = document.createElement('div');
         div.classList.add('box');
+        div.setAttribute('draggable','false');
         sketchArea.appendChild(div);
     }
     sketchArea.setAttribute('style', `grid-template-columns: repeat(${x},1fr); grid-template-rows:repeat(${x},1fr);`);
@@ -39,10 +40,12 @@ function clearAll(){
 }
 
 function addColor(e){
+    if (e.type === 'mouseover' && !mouseDown) return;
     e.target.style.backgroundColor=fillColor;
 }
 
 function removeColor(e){
+    if (e.type === 'mouseover' && !mouseDown) return;
     e.target.style.backgroundColor='white';
 }
 
@@ -52,7 +55,9 @@ function fill(e){
     const pixels = document.querySelectorAll('.box');
     pixels.forEach((pixel)=>{
         pixel.removeEventListener('mouseover',removeColor);
+        pixel.removeEventListener('mousedown',removeColor);
         pixel.addEventListener('mouseover',addColor);
+        pixel.addEventListener('mousedown',addColor);
     });
 }
 
@@ -61,8 +66,10 @@ function erase(e){
     e.target.setAttribute('style','box-shadow: 0 0 10px rgba(0, 0, 0, 5);');
     const pixels = document.querySelectorAll('.box');
     pixels.forEach((pixel)=>{
-        pixel.removeEventListener('mouseover',addColor)
+        pixel.removeEventListener('mouseover',addColor);
+        pixel.removeEventListener('mousedown',addColor);
         pixel.addEventListener('mouseover',removeColor);
+        pixel.addEventListener('mousedown',removeColor);
     });
 }
 
@@ -72,6 +79,7 @@ let defaultColor = '#000000';
 let fillColor = '#000000';
 
 let n;
+let mouseDown = false
 const sketchArea = document.querySelector('.sketchArea');
 const eraser = document.querySelector('.eraser');
 const brush = document.querySelector('.brush');
@@ -87,6 +95,8 @@ createCanvas(n);
 
 
 //-----------------------------------------------Event Listeners----------------------------------------------
+document.body.onmousedown = () => (mouseDown = true)
+document.body.onmouseup = () => (mouseDown = false)
 
 eraser.addEventListener('click',erase);
 
@@ -104,7 +114,7 @@ clear.addEventListener('mouseenter',(e)=>{
 });
 clear.addEventListener('mouseleave',(e)=>{
     e.target.childNodes[1].style.display = 'none';
-    e.target.style.backgroundImage = 'url("../Resources/clear.png")';
+    e.target.style.backgroundImage = "url('../Resources/clear.png')";
 });
 
 
