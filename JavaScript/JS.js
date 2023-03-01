@@ -7,7 +7,8 @@ function createCanvas(x){
     for(let i=0;i<(x*x);i++){
         const div = document.createElement('div');
         div.classList.add('box');
-        div.setAttribute('draggable','false');
+        //div.setAttribute('draggable','false');
+        //div.addEventListener('click',()=>{alert('Select Fill tool to begin drawing')});
         sketchArea.appendChild(div);
     }
     sketchArea.setAttribute('style', `grid-template-columns: repeat(${x},1fr); grid-template-rows:repeat(${x},1fr);`);
@@ -24,6 +25,7 @@ function addGrid(){
 
 function changeCanvasSize(){
     canvasSize.textContent = `${slider.value} x ${slider.value}`;
+    console.log(slider.value);
     n = slider.value;
     gridlines.checked = false;
     brush.style.boxShadow = 'none';
@@ -54,6 +56,7 @@ function fill(e){
     e.target.setAttribute('style','box-shadow: 0 0 10px rgba(0, 0, 0, 5);');
     const pixels = document.querySelectorAll('.box');
     pixels.forEach((pixel)=>{
+        //pixel.removeEventListener('click',()=>{alert('Select Fill tool to begin drawing')});
         pixel.removeEventListener('mouseover',removeColor);
         pixel.removeEventListener('mousedown',removeColor);
         pixel.addEventListener('mouseover',addColor);
@@ -66,6 +69,7 @@ function erase(e){
     e.target.setAttribute('style','box-shadow: 0 0 10px rgba(0, 0, 0, 5);');
     const pixels = document.querySelectorAll('.box');
     pixels.forEach((pixel)=>{
+        //pixel.removeEventListener('click',()=>{alert('Select Fill tool to begin drawing')});
         pixel.removeEventListener('mouseover',addColor);
         pixel.removeEventListener('mousedown',addColor);
         pixel.addEventListener('mouseover',removeColor);
